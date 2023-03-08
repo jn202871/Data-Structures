@@ -82,7 +82,7 @@ public class BinarySearchTree {
             node.transform(temp);
 
             // Delete the inorder successor
-            delete(temp.getKey());
+            node.setRight(deleter((node.getRight()), temp.getKey()));
         }
 
         return node;
