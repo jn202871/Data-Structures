@@ -8,7 +8,7 @@ public class List {
 	private Node head; // Head Pointer
 	private int n; // Number of Nodes in List
 
-	public List() { // Initialization of List
+	public List() { // Constructor of List
 		this.head = null;
 		this.n = 0;
 	}
