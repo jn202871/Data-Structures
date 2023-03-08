@@ -1,5 +1,3 @@
-import nodes.TreeNode;
-
 public class BinarySearchTree {
     private TreeNode root;
 

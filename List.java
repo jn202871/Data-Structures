@@ -1,5 +1,3 @@
-import nodes.Node;
-
 // Jay Nash 3/8/23
 // Program to impliment Linked List, list is created by creating a pointer to null and int n to 0
 // Nodes can be added using the insert function and can be found to be returned or deleted using searchRemove

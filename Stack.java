@@ -1,5 +1,3 @@
-import nodes.Node;
-
 public class Stack {
     private Node head;
 

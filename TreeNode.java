@@ -1,4 +1,4 @@
-package nodes;
+
 public class TreeNode {
 	
 	// Node information
