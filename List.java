@@ -9,20 +9,20 @@ public class List {
 	private int n; // Number of Nodes in List
 
 	public List() { // Constructor of List
-		this.head = null;
-		this.n = 0;
+		head = null;
+		n = 0;
 	}
 	
 	public int length(){ // Returns N as it is the length of the List
-		return this.n;
+		return n;
 	}
 	
 	public boolean isEmptyList(){ // Checks if N is 0
-		return this.n == 0;
+		return n == 0;
 	}
 	
 	public Node searchReturn(int key){ // returns node with specified key
-		Node temp = this.head;
+		Node temp = head;
 		while (temp != null){
 			if (temp.getKey() == key) {
 				return temp;
@@ -34,15 +34,15 @@ public class List {
 	
 	public Node searchRemove(int key){ // Returns and removes node with specified key
 		Node lastTemp = null;
-		Node temp = this.head;
+		Node temp = head;
 		while (temp != null) {
 			if (temp.getKey() == key) {
 				if (lastTemp == null) {
-					this.head = temp.getNext();
+					head = temp.getNext();
 				} else {
 					lastTemp.setNext(temp.getNext());
 				}
-				this.n--;
+				n--;
 				return temp;
 			}
 			lastTemp = temp;
@@ -52,14 +52,14 @@ public class List {
 	}
 	
 	public void insert(Node x){ // Appends specified Node to list
-		x.setNext(this.head);
-		this.head = x;
-		this.n++;
+		x.setNext(head);
+		head = x;
+		n++;
 	}
 	
 	public void printList(){ // Prints entire list
-		Node temp = this.head;
-		System.out.println(this.n);
+		Node temp = head;
+		System.out.println(n);
 		while (temp != null){
 			System.out.println(temp.getKey());
 			temp = temp.getNext();
