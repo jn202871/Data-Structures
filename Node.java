@@ -6,8 +6,7 @@
 class Node {
 	
 	// Node information
-	public Node next;
-	public int key;
+	private Node next;
 	private String name;
 	private int ssn;
 	
@@ -16,7 +15,6 @@ class Node {
 		this.name = name;
 		this.ssn = ssn;
 		this.next = null;
-		this.key = ssn % 10000;
 	}
 	
 	// Returns Name
@@ -47,6 +45,10 @@ class Node {
 	// Sets pointer of node to argument
 	public void setNext(Node next){
 		this.next = next;
+	}
+
+	public Node getNext(){
+		return this.next;
 	}
 	
 }

@@ -24,10 +24,10 @@ public class List {
 	public Node searchReturn(int key){ // returns node with specified key
 		Node temp = this.head;
 		while (temp != null){
-			if (temp.key == key) {
+			if (temp.getKey() == key) {
 				return temp;
 			}
-			temp = temp.next;
+			temp = temp.getNext();
 		}
 		return null;
 	}
@@ -36,17 +36,17 @@ public class List {
 		Node lastTemp = null;
 		Node temp = this.head;
 		while (temp != null) {
-			if (temp.key == key) {
+			if (temp.getKey() == key) {
 				if (lastTemp == null) {
-					this.head = temp.next;
+					this.head = temp.getNext();
 				} else {
-					lastTemp.setNext(temp.next);
+					lastTemp.setNext(temp.getNext());
 				}
 				this.n--;
 				return temp;
 			}
 			lastTemp = temp;
-			temp = temp.next;
+			temp = temp.getNext();
 		}
 		return null;
 	}
@@ -61,8 +61,8 @@ public class List {
 		Node temp = this.head;
 		System.out.println(this.n);
 		while (temp != null){
-			System.out.println(temp.key);
-			temp = temp.next;
+			System.out.println(temp.getKey());
+			temp = temp.getNext();
 		}
 	}
 }
