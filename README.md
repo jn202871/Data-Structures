@@ -1,4 +1,4 @@
-# Linked-List
+# List.java
 Makes a linked list and has various functions to facilitate the usage of the list.
 
 list.length()
