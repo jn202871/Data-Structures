@@ -1,4 +1,5 @@
-class TreeNode {
+package nodes;
+public class TreeNode {
 	
 	// Node information
 	private TreeNode right;

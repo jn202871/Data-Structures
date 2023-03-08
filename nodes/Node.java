@@ -1,9 +1,10 @@
+package nodes;
 // Jay Nash 3/1/23
 // Program to impliment Node class, class takes an input of a name and SSN and creates 
 // a node with an empty pointer. The pointer can be assigned to another node using the
 // setNext() method and the linked list can be followed using the getNext() method.
 
-class Node {
+public class Node {
 	
 	// Node information
 	private Node next;
