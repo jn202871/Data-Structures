@@ -1,6 +1,5 @@
-List.class
-Node.class
-TestList.class
+*.class
+TestBSE.java
 TestList.java
 TestBSE.java
 TreeNode.class
