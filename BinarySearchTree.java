@@ -13,32 +13,38 @@ public class BinarySearchTree {
         return searchr(root,key);
     }
 
-    private TreeNode searchr(TreeNode root, int key){
-        if (root==null){
+    private TreeNode searchr(TreeNode node, int key){
+        if (node==null){
             return null;
-        } else if (key == root.getKey()){
-            return root;
-        } else if (key < root.getKey()){
-            return searchr(root.getLeft(),key);
+        } else if (key == node.getKey()){
+            return node;
+        } else if (key < node.getKey()){
+            return searchr(node.getLeft(),key);
         } else {
-            return searchr(root.getRight(),key);
+            return searchr(node.getRight(),key);
         }
 
     }
 
     public void insert(TreeNode x){
-        insertr(root,x);
-    }
+        TreeNode temp = root;
+        TreeNode parent = null;
 
-    private TreeNode insertr(TreeNode root, TreeNode x){
-        if (root == null) {
-            root = x;
-        } else if (x.getKey() < root.getKey()) {
-            root.setLeft(insertr(root.getLeft(), x));
-        } else if (x.getKey() > root.getKey()) {
-            root.setRight(insertr(root.getRight(), x));
+        while (temp != null){
+            parent=temp;
+            if (x.getKey()<temp.getKey()){
+                temp = temp.getLeft();
+            } else {
+                temp = temp.getRight();
+            }
         }
-        return x;
+        if (parent==null){
+            root = x;
+        } else if (x.getKey() < parent.getKey()){
+            parent.setLeft(x);
+        } else {
+            parent.setRight(x);
+        }
     }
 
     public void traverse(){
@@ -57,29 +63,29 @@ public class BinarySearchTree {
         deleter(root,key);
     }
 
-    private TreeNode deleter(TreeNode root, int key){
-        if (root == null) {
+    private TreeNode deleter(TreeNode node, int key){
+        if (node == null) {
             return null;
         }
 
-        if (key < root.getKey()) {
-            root.setLeft(deleter(root.getLeft(), key));
-        } else if (key > root.getKey()) {
-            root.setRight(deleter(root.getRight(), key));
+        if (key < node.getKey()) {
+            node.setLeft(deleter(node.getLeft(), key));
+        } else if (key > node.getKey()) {
+            node.setRight(deleter(node.getRight(), key));
         } else {
-            if (root.getLeft() == null) {
-                return root.getRight();
-            } else if (root.getRight() == null) {
-                return root.getLeft();
+            if (node.getLeft() == null) {
+                return node.getRight();
+            } else if (node.getRight() == null) {
+                return node.getLeft();
             }
-            TreeNode temp = minKey(root.getRight());
-            root.transform(temp);
+            TreeNode temp = minKey(node.getRight());
+            node.transform(temp);
 
             // Delete the inorder successor
             delete(temp.getKey());
         }
 
-        return root;
+        return node;
     }
 
     private TreeNode minKey(TreeNode x){
