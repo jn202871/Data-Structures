@@ -2,3 +2,8 @@ List.class
 Node.class
 TestList.class
 TestList.java
+TestBSE.java
+TreeNode.class
+.gitignore
+TestBSE.class
+BinarySearchTree.class
