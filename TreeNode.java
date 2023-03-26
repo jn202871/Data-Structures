@@ -1,4 +1,5 @@
-class TreeNode {
+
+public class TreeNode {
 	
 	// Node information
 	private TreeNode right;
@@ -40,8 +41,9 @@ class TreeNode {
 	}
 	
 	// Sets pointer of node to argument
-	public void setRight(TreeNode next){
+	public TreeNode setRight(TreeNode next){
 		this.right = next;
+		return this.right;
 	}
 
 	public TreeNode getRight(){
@@ -49,8 +51,9 @@ class TreeNode {
 	}
 
     // Sets pointer of node to argument
-	public void setLeft(TreeNode next){
+	public TreeNode setLeft(TreeNode next){
 		this.left = next;
+		return this.left;
 	}
 
 	public TreeNode getLeft(){
