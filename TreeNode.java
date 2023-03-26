@@ -1,4 +1,4 @@
-
+// Node with 2 child nodes
 public class TreeNode {
 	
 	// Node information

@@ -1,5 +1,4 @@
-
-
+// Node with one child node
 public class Node {
 	
 	// Node information
