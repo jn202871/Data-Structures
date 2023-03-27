@@ -6,3 +6,5 @@ TreeNode.class
 .gitignore
 TestBSE.class
 BinarySearchTree.class
+TestQueue.java
+TestStack.java
