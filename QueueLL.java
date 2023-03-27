@@ -1,16 +1,19 @@
+// Jay Nash 3/27/23
+// This is an array based queue that can hold up to 100 items.
+
 public class QueueLL {
     private Node head;
     private int n = 0;
 
-    public QueueLL(){
+    public QueueLL(){ //Constructor
         head = null;
     }
 
-    public Node front(){
+    public Node front(){ // Returns head node
         return head;
     }
 
-    public void printQueue() {
+    public void printQueue() { // Prints queue
         Node temp = head;
         while (temp != null) {
             System.out.println(temp.getKey());
@@ -18,7 +21,7 @@ public class QueueLL {
         }
     }
 
-    public Node dequeue(){
+    public Node dequeue(){ // Returns and removes head node while moving head pointer to next node
         Node temp = head;
         head = head.getNext();
         temp.setNext(null);
@@ -26,7 +29,7 @@ public class QueueLL {
         return temp;
     }
 
-    public Node enqueue(Node x){
+    public Node enqueue(Node x){ // Adds node to end of queue
         if (head == null){
             head = x;
         } else {
@@ -40,11 +43,11 @@ public class QueueLL {
         return x;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty(){ // Checks if queue is empty
         return head == null;
     }
 
-    public int length(){
+    public int length(){ // Returns length of queue
         return n;
     }
 }

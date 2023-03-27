@@ -1,17 +1,20 @@
+// Jay Nash 3/27/23
+// This is an array based queue that can hold up to 100 items.
+
 public class QueueA {
     private Node array[];
     private int front = 0;
     private int n = 0;
 
-    public QueueA(){
+    public QueueA(){ //Constructor
         array = new Node[100];
     }
 
-    public Node front(){
+    public Node front(){ // Returns front of queue
         return array[front];
     }
 
-    public void printQueue() {
+    public void printQueue() { // Prints queue
         int tail = (front + n) % 100;
         System.out.println(front);
         System.out.println(tail);
@@ -26,25 +29,25 @@ public class QueueA {
         }          
     }
 
-    public Node dequeue(){
+    public Node dequeue(){ //  Returns and removes front of queue
         Node temp = array[front];
         front = (front+1)%100;
         n = (n-1)%100;
         return temp;
     }
 
-    public Node enqueue(Node x){
+    public Node enqueue(Node x){ // Adds node to end of queue
         int tail = (front + n)  % 100;
         array[tail] = x;
         n = (n+1)%100;
         return array[tail];
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty(){ // Checks if queue is empty
         return n == 0;
     }
 
-    public int length(){
+    public int length(){ // Returns length of queue
         return n;
     }
 }
