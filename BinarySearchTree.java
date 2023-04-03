@@ -1,4 +1,4 @@
-public class BinarySearchTree {
+public class BinarySearchTree{
     private TreeNode root;
 
     public BinarySearchTree(){
@@ -47,20 +47,29 @@ public class BinarySearchTree {
         }
     }
 
-    public void traverse(){
-        traverser(root);
+    public void printTree() {
+	printTree2(root);
+	System.out.println();
     }
 
-    private void traverser(TreeNode root){
-        if (root != null){
-            traverser(root.getLeft());
-            System.out.println(root.getName());
-            traverser(root.getRight());
-        }
+    private void printTree2(TreeNode tree){
+	if (tree != null) {
+	    System.out.print(tree.getKey() + " ");
+            if (tree.getLeft() != null)
+	        System.out.print("Left: " + tree.getLeft().getKey() + " ");
+            else
+                System.out.print("Left: null ");
+            if (tree.getRight() != null)
+	        System.out.println("Right: " + tree.getRight().getKey() + " ");
+            else
+                System.out.println("Right: null ");
+	    printTree2(tree.getLeft());
+	    printTree2(tree.getRight());
+	}
     }
 
     public void delete(int key){
-        deleter(root,key);
+        root = deleter(root,key);
     }
 
     private TreeNode deleter(TreeNode node, int key){
@@ -77,12 +86,13 @@ public class BinarySearchTree {
                 return node.getRight();
             } else if (node.getRight() == null) {
                 return node.getLeft();
+            } else {
+            	TreeNode temp = node;
+            	node = minKey(node.getRight()); // Find Inorder Successor
+            	temp.setRight(deleter(temp.getRight(), node.getKey()));
+            	node.setRight(temp.getRight());
+            	node.setLeft(temp.getLeft());
             }
-            TreeNode temp = minKey(node.getRight());
-            node.transform(temp);
-
-            // Delete the inorder successor
-            node.setRight(deleter((node.getRight()), temp.getKey()));
         }
 
         return node;
@@ -93,5 +103,18 @@ public class BinarySearchTree {
             x = x.getLeft();
         }
         return x;
+    }
+    
+    public void traverse(){
+        traverser(root);
+        System.out.println();
+    }
+
+    private void traverser(TreeNode root){
+        if (root != null){
+            traverser(root.getLeft());
+            System.out.println(root.getName());
+            traverser(root.getRight());
+        }
     }
 }
