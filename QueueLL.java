@@ -1,16 +1,15 @@
 public class QueueLL {
     private Node head;
-    private int n = 0;
 
-    public QueueLL(){
+    public QueueLL(){ // Constructor
         head = null;
     }
 
-    public Node front(){
+    public Node front(){ // Returns front of queue
         return head;
     }
 
-    public void printQueue() {
+    public void printQueue() { // Interates over queue and prints
         Node temp = head;
         while (temp != null) {
             System.out.println(temp.getKey());
@@ -18,15 +17,14 @@ public class QueueLL {
         }
     }
 
-    public Node dequeue(){
+    public Node dequeue(){ // Removes head node and moves head pointer
         Node temp = head;
         head = head.getNext();
         temp.setNext(null);
-        n--;
         return temp;
     }
 
-    public Node enqueue(Node x){
+    public Node enqueue(Node x){ // Adds node to end of queue
         if (head == null){
             head = x;
         } else {
@@ -36,15 +34,10 @@ public class QueueLL {
             }
             temp.setNext(x);
         }
-        n++;
         return x;
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty(){ // Returns T/F empty
         return head == null;
-    }
-
-    public int length(){
-        return n;
     }
 }
