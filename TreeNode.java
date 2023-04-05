@@ -59,10 +59,5 @@ public class TreeNode {
 	public TreeNode getLeft(){
 		return this.left;
 	}
-
-    public void transform(TreeNode target){
-        this.name = target.getName();
-        this.ssn = target.getSSN();
-    }
 	
 }
