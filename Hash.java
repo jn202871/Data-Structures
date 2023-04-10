@@ -29,4 +29,12 @@ public class Hash {
         }
         return true;
     }
+
+    public void printHash(){
+        System.out.println("Dict Contents:");
+        for (int i=0; i < 7; i++){
+            table[i].printList();
+        }
+        System.out.println("End Dict Contents");
+    }
 }
